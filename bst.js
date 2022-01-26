@@ -24,16 +24,21 @@ function TreeNode(val, left, right) {
  * @param {number[]} nums
  * @return {TreeNode}
  */
- var sortedArrayToBST = function(nums, left = 0, right = nums.length - 1) {
-    if (left > right) return null;
-    
-    let mid = Math.floor((left + right) / 2);
-    let root = new TreeNode(nums[mid]);
+ var sortedArrayToBST = function(nums, left = 0, right = nums.length - 1) {  
 
-    root.left = sortedArrayToBST(nums, left, mid - 1);
-    root.right = sortedArrayToBST(nums, mid + 1, right);
-
-    return root;
 }
+
+
 const array = [-100, -50, 0, 50, 100];
-console.log(arrayToBST(array))
+console.log(sortedArrayToBST(array))
+
+
+if (left > right) return null;
+    
+let mid = Math.floor((left + right) / 2);
+let root = new TreeNode(nums[mid]);
+
+root.left = sortedArrayToBST(nums, left, mid - 1);
+root.right = sortedArrayToBST(nums, mid + 1, right);
+
+return root;
