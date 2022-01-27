@@ -31,6 +31,9 @@ var sortedArrayToBST = function(nums, left = 0, right = nums.length - 1) {
 
     let mid = Math.floor((left + right) / 2);
     let root = new TreeNode(nums[mid]);
+
+    root.left = sortedArrayToBST(nums, left, mid - 1);
+    root.right = sortedArrayToBST(nums, mid + 1, right);
 }
 
 
@@ -42,7 +45,6 @@ console.log(sortedArrayToBST(array))
     
 
 
-root.left = sortedArrayToBST(nums, left, mid - 1);
-root.right = sortedArrayToBST(nums, mid + 1, right);
+
 
 return root;
