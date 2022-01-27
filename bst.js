@@ -34,6 +34,8 @@ var sortedArrayToBST = function(nums, left = 0, right = nums.length - 1) {
 
     root.left = sortedArrayToBST(nums, left, mid - 1);
     root.right = sortedArrayToBST(nums, mid + 1, right);
+
+    return root;
 }
 
 
@@ -47,4 +49,3 @@ console.log(sortedArrayToBST(array))
 
 
 
-return root;
